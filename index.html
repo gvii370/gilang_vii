@@ -194,7 +194,7 @@
         .stat-item {
             display: flex;
             flex-direction: column;
-            }
+        }
 
         .stat-number {
             font-size: 1.8rem;
@@ -724,15 +724,15 @@
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
         .pricing-card {
             background-color: #11141a;
             border: 1px solid #1f2833;
             border-radius: 15px;
-            padding: 40px 25px;
+            padding: 40px 30px;
             text-align: center;
             position: relative;
             transition: 0.3s;
@@ -752,11 +752,6 @@
             box-shadow: 0 0 25px rgba(69, 243, 255, 0.15);
         }
 
-        .pricing-card.discount {
-            border-color: #ff4757;
-            box-shadow: 0 0 25px rgba(255, 71, 87, 0.2);
-        }
-
         .popular-tag {
             position: absolute;
             top: -15px;
@@ -772,51 +767,23 @@
             letter-spacing: 1px;
         }
 
-        .discount-tag {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(45deg, #ff4757, #ff6b81);
-            color: #fff;
-            padding: 5px 20px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 0 10px rgba(255, 71, 87, 0.5);
-        }
-
         .pricing-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin-bottom: 10px;
             color: #fff;
         }
 
         .pricing-card .price {
-            font-size: 2.1rem;
+            font-size: 2.2rem;
             font-weight: 800;
             color: #45f3ff;
             margin: 15px 0;
         }
 
-        .pricing-card.discount .price {
-            color: #ff4757;
-        }
-
         .pricing-card .price span {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: #c5c6c7;
             font-weight: 400;
-        }
-
-        .old-price {
-            font-size: 1.1rem;
-            color: #666;
-            text-decoration: line-through;
-            display: block;
-            margin-bottom: -5px;
         }
 
         .pricing-features {
@@ -827,7 +794,7 @@
         }
 
         .pricing-features li {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #c5c6c7;
             margin-bottom: 12px;
             display: flex;
@@ -837,11 +804,7 @@
 
         .pricing-features li i {
             color: #45f3ff;
-            font-size: 0.95rem;
-        }
-
-        .pricing-card.discount .pricing-features li i {
-            color: #ff4757;
+            font-size: 1rem;
         }
 
         .pricing-btn {
@@ -862,13 +825,6 @@
             border: none;
         }
 
-        .pricing-card.discount .pricing-btn {
-            background: linear-gradient(45deg, #ff4757, #ff6b81);
-            color: #fff;
-            border: none;
-            box-shadow: 0 4px 12px rgba(255, 71, 87, 0.3);
-        }
-
         .pricing-btn:hover {
             border-color: #45f3ff;
             background-color: rgba(69, 243, 255, 0.1);
@@ -879,12 +835,6 @@
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(69, 243, 255, 0.3);
             color: #0b0c10;
-        }
-
-        .pricing-card.discount .pricing-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.5);
-            color: #fff;
         }
 
         /* FAQ SECTION INTERACTIVE ACCORDION */
@@ -1014,7 +964,7 @@
 <body>
 
     <nav>
-        <div class="logo">GILANG VII</div>
+        <div class="logo"><a href="#home" style="color: inherit; text-decoration: none;">GILANG VII</a></div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Layanan</a></li>
@@ -1197,7 +1147,7 @@
                         <li><i class="fa-solid fa-circle-check"></i> 2x Revisi</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/6289512961925?text=Halo%20Gilang%20VII,%20saya%20tertarik%20dengan%20Paket%20Shorts%20/%20Reels." class="pricing-btn" target="_blank">Pilih Paket</a>
+                <a href="https://wa.me/6281234567890?text=Halo%20Gilang%20VII,%20saya%20tertarik%20dengan%20Paket%20Shorts%20/%20Reels." class="pricing-btn" target="_blank">Pilih Paket</a>
             </div>
 
             <div class="pricing-card popular">
@@ -1213,23 +1163,7 @@
                         <li><i class="fa-solid fa-circle-check"></i> 3x Revisi + Gratis Thumbnail</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/6289512961925?text=Halo%20Gilang%20VII,%20saya%20tertarik%20dengan%20Paket%20Standard%20Video." class="pricing-btn" target="_blank">Pilih Paket</a>
-            </div>
-
-            <div class="pricing-card discount">
-                <div class="discount-tag">Promo Terbatas!</div>
-                <div>
-                    <h3>Paket Bundle Hemat</h3>
-                    <span class="old-price">Rp 750.000</span>
-                    <div class="price">Rp 500rb <span>/ 5 Shorts</span></div>
-                    <ul class="pricing-features">
-                        <li><i class="fa-solid fa-circle-check"></i> 5 Video Shorts / Reels / TikTok</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Efek Visual Premium & Sound Efek</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Garansi Pengerjaan Cepat</li>
-                        <li><i class="fa-solid fa-circle-check"></i> Hemat Hingga Rp 250 Ribu!</li>
-                    </ul>
-                </div>
-                <a href="https://wa.me/6289512961925?text=Halo%20Gilang%20VII,%20saya%20ingin%20mengambil%20Promo%20Paket%20Bundle%20Hemat%20Diskon." class="pricing-btn" target="_blank">Ambil Promo</a>
+                <a href="https://wa.me/6281234567890?text=Halo%20Gilang%20VII,%20saya%20tertarik%20dengan%20Paket%20Standard%20Video." class="pricing-btn" target="_blank">Pilih Paket</a>
             </div>
 
             <div class="pricing-card">
@@ -1243,7 +1177,7 @@
                         <li><i class="fa-solid fa-circle-check"></i> Revisi Sampai Puas</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/6289512961925?text=Halo%20Gilang%20VII,%20saya%20ingin%20konsultasi%20mengenai%20Paket%20Custom%20Premium." class="pricing-btn" target="_blank">Konsultasi</a>
+                <a href="https://wa.me/6281234567890?text=Halo%20Gilang%20VII,%20saya%20ingin%20konsultasi%20mengenai%20Paket%20Custom%20Premium." class="pricing-btn" target="_blank">Konsultasi</a>
             </div>
         </div>
     </section>
@@ -1286,7 +1220,7 @@
     <section class="contact" id="contact">
         <h2 class="section-title">Tertarik Bekerjasama?</h2>
         <p>Bawa kualitas konten Anda ke level selanjutnya bersama Gilang VII.</p>
-        <a href="https://wa.me/6289512961925?text=Halo%20Gilang%20VII,%20saya%20tertarik%20dengan%20jasa%20editingnya." class="cta-btn" target="_blank">Hubungi Via WhatsApp</a>
+        <a href="https://wa.me/6281234567890?text=Halo%20Gilang%20VII,%20saya%20tertarik%20dengan%20jasa%20editingnya." class="cta-btn" target="_blank">Hubungi Via WhatsApp</a>
     </section>
 
     <footer>
@@ -1391,46 +1325,3 @@
             // Lock positioning inside borders
             if (x < 0) x = 0;
             if (x > rect.width) x = rect.width;
-            
-            const positionPercent = (x / rect.width) * 100;
-            
-            afterImg.style.width = `${positionPercent}%`;
-            handleLine.style.left = `${positionPercent}%`;
-            handleBtn.style.left = `${positionPercent}%`;
-        }
-
-        // Event listeners for dragging
-        let isDragging = false;
-
-        function startDragging() {
-            isDragging = true;
-        }
-
-        function stopDragging() {
-            isDragging = false;
-        }
-
-        // Mouse Events
-        slider.addEventListener('mousedown', (e) => {
-            startDragging();
-            moveSlider(e);
-        });
-        window.addEventListener('mouseup', stopDragging);
-        slider.addEventListener('mousemove', (e) => {
-            if (!isDragging) return;
-            moveSlider(e);
-        });
-
-        // Touch Events for Mobile compatibility
-        slider.addEventListener('touchstart', (e) => {
-            startDragging();
-            moveSlider(e);
-        });
-        window.addEventListener('touchend', stopDragging);
-        slider.addEventListener('touchmove', (e) => {
-            if (!isDragging) return;
-            moveSlider(e);
-        });
-    </script>
-</body>
-</html>
