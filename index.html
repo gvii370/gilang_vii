@@ -60,12 +60,68 @@
             color: #45f3ff;
         }
 
-        /* Hero Section Premium Split-Screen & Background Tech Grid */
-        .hero {
-            min-height: 100vh;
+        /* SECTION PROMO SPESIAL */
+        .promo-banner {
+            background: linear-gradient(45deg, #ff0055, #7000ff);
+            padding: 15px 8%;
+            margin-top: 75px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #ff0055;
+            box-shadow: 0 5px 20px rgba(255, 0, 85, 0.2);
+            position: relative;
+            z-index: 999;
+        }
+
+        .promo-text {
             display: flex;
             align-items: center;
-            padding: 120px 8% 80px 8%;
+            gap: 15px;
+        }
+
+        .promo-badge {
+            background-color: #fff;
+            color: #ff0055;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: pulse 1.5s infinite;
+        }
+
+        .promo-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .promo-countdown {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            font-size: 0.95rem;
+            font-weight: 600;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 6px 15px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Hero Section Premium Split-Screen */
+        .hero {
+            min-height: calc(100vh - 75px);
+            display: flex;
+            align-items: center;
+            padding: 60px 8% 80px 8%;
             position: relative;
             background: linear-gradient(rgba(11, 12, 16, 0.85), rgba(11, 12, 16, 0.95)), 
                         url('https://drive.google.com/uc?export=view&id=1Mn0reIRH9FMfaWIK2XijtaUITMacZJMd');
@@ -75,7 +131,6 @@
             overflow: hidden;
         }
 
-        /* Tambahan Efek Grid & Glowing Blob di Background Hero */
         .hero::before {
             content: '';
             position: absolute;
@@ -86,7 +141,6 @@
             z-index: 1;
         }
 
-        /* Ambient floating light particles */
         .particle {
             position: absolute;
             background: rgba(69, 243, 255, 0.2);
@@ -97,17 +151,9 @@
         }
 
         @keyframes floatParticle {
-            0% {
-                transform: translateY(100vh) scale(0);
-                opacity: 0;
-            }
-            50% {
-                opacity: 0.8;
-            }
-            100% {
-                transform: translateY(-10vh) scale(1);
-                opacity: 0;
-            }
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
         }
 
         .hero-glow-1 {
@@ -116,8 +162,7 @@
             height: 300px;
             background: rgba(69, 243, 255, 0.15);
             filter: blur(100px);
-            top: 20%;
-            left: 10%;
+            top: 20%; left: 10%;
             border-radius: 50%;
             z-index: 1;
             pointer-events: none;
@@ -129,8 +174,7 @@
             height: 400px;
             background: rgba(0, 168, 255, 0.12);
             filter: blur(120px);
-            bottom: 10%;
-            right: 5%;
+            bottom: 10%; right: 5%;
             border-radius: 50%;
             z-index: 1;
             pointer-events: none;
@@ -182,7 +226,6 @@
             line-height: 1.7;
         }
 
-        /* Stats Badge di bawah tulisan Hero */
         .hero-stats {
             display: flex;
             gap: 30px;
@@ -228,7 +271,6 @@
             box-shadow: 0 8px 25px rgba(69, 243, 255, 0.4);
         }
 
-        /* Mockup Editor Visual di Sisi Kanan Hero */
         .editor-mockup {
             background: #11141a;
             border: 1px solid rgba(69, 243, 255, 0.2);
@@ -255,25 +297,12 @@
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .mockup-dots {
-            display: flex;
-            gap: 6px;
-        }
-
-        .mockup-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-        }
+        .mockup-dots { display: flex; gap: 6px; }
+        .mockup-dot { width: 10px; height: 10px; border-radius: 50%; }
         .mockup-dot.red { background: #ff5f56; }
         .mockup-dot.yellow { background: #ffbd2e; }
         .mockup-dot.green { background: #27c93f; }
-
-        .mockup-title {
-            font-size: 0.75rem;
-            color: #888;
-            font-family: monospace;
-        }
+        .mockup-title { font-size: 0.75rem; color: #888; font-family: monospace; }
 
         .mockup-screen {
             background: #07080b;
@@ -293,7 +322,6 @@
             opacity: 0.85;
         }
 
-        /* Mockup Timeline Area dengan Live Animated Waveform & Track */
         .mockup-timeline {
             margin-top: 15px;
             background: #07080b;
@@ -315,40 +343,27 @@
         .timeline-track.video::after {
             content: '';
             position: absolute;
-            left: 5%;
-            width: 70%;
-            height: 100%;
+            left: 5%; width: 70%; height: 100%;
             background: linear-gradient(90deg, #45f3ff, #00a8ff);
             border-radius: 4px;
             animation: trackPulse 3s infinite ease-in-out;
         }
 
-        @keyframes trackPulse {
-            0%, 100% { opacity: 0.85; }
-            50% { opacity: 0.5; }
-        }
+        @keyframes trackPulse { 0%, 100% { opacity: 0.85; } 50% { opacity: 0.5; } }
 
-        /* Audio Waveform Animation */
         .audio-waveform {
             display: flex;
             align-items: flex-end;
-            gap: 3px;
-            width: 80%;
-            height: 100%;
-            padding-left: 10px;
-            position: relative;
-            z-index: 2;
+            gap: 3px; width: 80%; height: 100%;
+            padding-left: 10px; position: relative; z-index: 2;
         }
 
         .audio-waveform span {
-            display: block;
-            width: 3px;
-            background-color: #00a8ff;
-            border-radius: 2px;
+            display: block; width: 3px;
+            background-color: #00a8ff; border-radius: 2px;
             animation: bounceWaveform 1.2s ease-in-out infinite;
         }
 
-        /* Waveform height variation & delay for natural look */
         .audio-waveform span:nth-child(1) { height: 40%; animation-delay: 0.1s; }
         .audio-waveform span:nth-child(2) { height: 75%; animation-delay: 0.4s; }
         .audio-waveform span:nth-child(3) { height: 50%; animation-delay: 0.2s; }
@@ -359,16 +374,8 @@
         .audio-waveform span:nth-child(8) { height: 45%; animation-delay: 0.2s; }
         .audio-waveform span:nth-child(9) { height: 60%; animation-delay: 0.4s; }
 
-        @keyframes bounceWaveform {
-            0%, 100% { transform: scaleY(0.3); }
-            50% { transform: scaleY(1); }
-        }
+        @keyframes bounceWaveform { 0%, 100% { transform: scaleY(0.3); } 50% { transform: scaleY(1); } }
 
-        .timeline-track:last-child {
-            margin-bottom: 0;
-        }
-
-        /* Floating Tags around Mockup */
         .floating-badge {
             position: absolute;
             background: rgba(17, 20, 26, 0.85);
@@ -384,56 +391,17 @@
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
         }
 
-        .badge-1 {
-            top: -15px;
-            left: -25px;
-            animation: bounce-slow 4s ease-in-out infinite alternate;
-        }
-
-        .badge-2 {
-            bottom: 30px;
-            right: -30px;
-            animation: bounce-slow 4s ease-in-out infinite alternate-reverse;
-        }
-
-        .floating-badge i {
-            color: #45f3ff;
-        }
-
-        @keyframes bounce-slow {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-8px); }
-        }
+        .badge-1 { top: -15px; left: -25px; animation: bounce-slow 4s ease-in-out infinite alternate; }
+        .badge-2 { bottom: 30px; right: -30px; animation: bounce-slow 4s ease-in-out infinite alternate-reverse; }
+        .floating-badge i { color: #45f3ff; }
+        @keyframes bounce-slow { 0% { transform: translateY(0); } 100% { transform: translateY(-8px); } }
 
         /* Services Section */
-        .services {
-            padding: 100px 8%;
-            background-color: #0b0c10;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 4px;
-            background-color: #45f3ff;
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
+        .services { padding: 100px 8%; background-color: #0b0c10; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 60px; position: relative; }
+        .section-title::after { content: ''; display: block; width: 50px; height: 4px; background-color: #45f3ff; margin: 10px auto 0; border-radius: 2px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        
         .service-card {
             background-color: #11141a;
             padding: 40px 30px;
@@ -443,521 +411,129 @@
             text-align: center;
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-color: #45f3ff;
-            box-shadow: 0 10px 30px rgba(69, 243, 255, 0.1);
-        }
+        .service-card:hover { transform: translateY(-10px); border-color: #45f3ff; box-shadow: 0 10px 30px rgba(69, 243, 255, 0.1); }
+        .service-card i { margin-bottom: 20px; color: #45f3ff; }
+        .service-card h3 { margin-bottom: 15px; font-size: 1.4rem; }
+        .service-card p { color: #c5c6c7; font-size: 0.95rem; line-height: 1.6; }
 
-        .service-card i {
-            margin-bottom: 20px;
-            color: #45f3ff;
-        }
-
-        .service-card h3 {
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-
-        .service-card p {
-            color: #c5c6c7;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* BEFORE / AFTER INTERACTIVE SLIDER SECTION */
-        .grading-slider-section {
-            padding: 100px 8%;
-            background-color: #0b0c10;
-            border-top: 1px solid #1f2833;
-            border-bottom: 1px solid #1f2833;
-        }
-
-        .slider-wrapper {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            overflow: hidden;
-            border-radius: 16px;
-            box-shadow: 0 20px 45px rgba(0,0,0,0.6);
-            aspect-ratio: 16/9;
-            user-select: none;
-            cursor: ew-resize;
-            border: 2px solid rgba(69, 243, 255, 0.2);
-        }
-
-        .image-side {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* Sebelum: RAW Look (Flat & Low Contrast) */
-        .before-image {
-            background-image: url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1600&auto=format&fit=crop');
-            filter: saturate(0.4) contrast(0.7) brightness(0.9);
-            z-index: 1;
-        }
-
-        /* Sesudah: Cinematic Graded Look */
-        .after-image {
-            background-image: url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1600&auto=format&fit=crop');
-            filter: saturate(1.35) contrast(1.15) brightness(1.0) sepia(0.08);
-            z-index: 2;
-            width: 50%; /* Default width split */
-        }
-
-        /* Slider Handle Line */
-        .slider-handle-line {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background-color: #45f3ff;
-            left: 50%;
-            z-index: 3;
-            box-shadow: 0 0 10px rgba(69, 243, 255, 0.8);
-        }
-
-        /* Slider Handle Button */
-        .slider-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 44px;
-            height: 44px;
-            background: #45f3ff;
-            color: #0b0c10;
-            border-radius: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 4;
-            box-shadow: 0 0 15px rgba(69, 243, 255, 0.6);
-            font-size: 1rem;
-        }
-
-        /* Labels */
-        .slider-label {
-            position: absolute;
-            bottom: 20px;
-            background: rgba(11, 12, 16, 0.85);
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-            z-index: 5;
-            pointer-events: none;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .label-before {
-            left: 20px;
-            color: #999;
-        }
-
-        .label-after {
-            right: 20px;
-            color: #45f3ff;
-        }
+        /* Before/After Section */
+        .grading-slider-section { padding: 100px 8%; background-color: #0b0c10; border-top: 1px solid #1f2833; border-bottom: 1px solid #1f2833; }
+        .slider-wrapper { max-width: 900px; margin: 0 auto; position: relative; overflow: hidden; border-radius: 16px; box-shadow: 0 20px 45px rgba(0,0,0,0.6); aspect-ratio: 16/9; user-select: none; cursor: ew-resize; border: 2px solid rgba(69, 243, 255, 0.2); }
+        .image-side { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; }
+        .before-image { background-image: url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1600&auto=format&fit=crop'); filter: saturate(0.4) contrast(0.7) brightness(0.9); z-index: 1; }
+        .after-image { background-image: url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=1600&auto=format&fit=crop'); filter: saturate(1.35) contrast(1.15) brightness(1.0) sepia(0.08); z-index: 2; width: 50%; }
+        .slider-handle-line { position: absolute; top: 0; bottom: 0; width: 3px; background-color: #45f3ff; left: 50%; z-index: 3; box-shadow: 0 0 10px rgba(69, 243, 255, 0.8); }
+        .slider-button { position: absolute; top: 50%; left: 50%; width: 44px; height: 44px; background: #45f3ff; color: #0b0c10; border-radius: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center; z-index: 4; box-shadow: 0 0 15px rgba(69, 243, 255, 0.6); font-size: 1rem; }
+        .slider-label { position: absolute; bottom: 20px; background: rgba(11, 12, 16, 0.85); padding: 8px 16px; border-radius: 6px; font-size: 0.85rem; font-weight: bold; letter-spacing: 1px; z-index: 5; pointer-events: none; border: 1px solid rgba(255, 255, 255, 0.1); }
+        .label-before { left: 20px; color: #999; }
+        .label-after { right: 20px; color: #45f3ff; }
 
         /* Portfolio Section */
-        .portfolio {
-            padding: 100px 8%;
-            background-color: #11141a;
-        }
-
-        /* Portfolio Filter Buttons */
-        .portfolio-filters {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
+        .portfolio { padding: 100px 8%; background-color: #11141a; }
+        .portfolio-filters { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; flex-wrap: wrap; }
+        
         .filter-btn {
-            background-color: #11141a;
-            border: 1px solid #1f2833;
-            color: #c5c6c7;
-            padding: 10px 24px;
-            border-radius: 30px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.3s;
+            background-color: #11141a; border: 1px solid #1f2833; color: #c5c6c7;
+            padding: 10px 24px; border-radius: 30px; font-weight: 600; cursor: pointer; transition: 0.3s;
         }
 
-        .filter-btn.active, .filter-btn:hover {
-            background: linear-gradient(45deg, #45f3ff, #00a8ff);
-            color: #0b0c10;
-            border-color: transparent;
-            box-shadow: 0 5px 15px rgba(69, 243, 255, 0.2);
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .portfolio-item {
-            position: relative;
-            border-radius: 10px;
-            overflow: hidden;
-            aspect-ratio: 16/9;
-            background-color: #1f2833;
-            cursor: pointer;
-            transition: all 0.4s ease-in-out;
-        }
-
-        /* Simple Category Filter Class */
-        .portfolio-item.hidden {
-            display: none !important;
-            opacity: 0;
-            transform: scale(0.8);
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: 0.5s;
-        }
-
-        .portfolio-item:hover img {
-            transform: scale(1.1);
-        }
-
+        .filter-btn.active, .filter-btn:hover { background: linear-gradient(45deg, #45f3ff, #00a8ff); color: #0b0c10; border-color: transparent; box-shadow: 0 5px 15px rgba(69, 243, 255, 0.2); }
+        .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .portfolio-item { position: relative; border-radius: 10px; overflow: hidden; aspect-ratio: 16/9; background-color: #1f2833; cursor: pointer; transition: all 0.4s ease-in-out; }
+        .portfolio-item.hidden { display: none !important; opacity: 0; transform: scale(0.8); }
+        .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .portfolio-item:hover img { transform: scale(1.1); }
+        
         .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(11, 12, 16, 0.85);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: 0.3s;
-            gap: 10px;
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(11, 12, 16, 0.85); display: flex; flex-direction: column;
+            justify-content: center; align-items: center; opacity: 0; transition: 0.3s; gap: 10px;
         }
 
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
+        .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+        .portfolio-overlay i { color: #45f3ff; font-size: 2rem; text-shadow: 0 0 15px rgba(69, 243, 255, 0.5); }
+        .portfolio-overlay h4 { font-size: 1.1rem; font-weight: 600; text-align: center; padding: 0 10px; }
 
-        .portfolio-overlay i {
-            color: #45f3ff;
-            font-size: 2rem;
-            text-shadow: 0 0 15px rgba(69, 243, 255, 0.5);
-        }
-
-        .portfolio-overlay h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        /* Video Modal Popup (Lightbox) */
+        /* VIDEO MODAL POPUP */
         .video-modal {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             background-color: rgba(7, 8, 11, 0.95);
-            z-index: 2000;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            backdrop-filter: blur(8px);
+            z-index: 2000; display: none;
+            justify-content: center; align-items: center;
+            padding: 20px; backdrop-filter: blur(8px);
         }
 
         .modal-content {
-            position: relative;
-            width: 100%;
-            max-width: 900px;
-            aspect-ratio: 16/9;
-            background-color: #11141a;
-            border-radius: 15px;
-            border: 1px solid #1f2833;
-            overflow: hidden;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+            position: relative; width: 100%; max-width: 900px;
+            aspect-ratio: 16/9; background-color: #11141a;
+            border-radius: 15px; border: 1px solid #1f2833;
+            overflow: hidden; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
         }
 
-        .modal-content video {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+        .modal-content iframe {
+            width: 100%; height: 100%; border: none;
         }
 
         .modal-close {
-            position: absolute;
-            top: -50px;
-            right: 0;
-            color: #fff;
-            font-size: 1.8rem;
-            cursor: pointer;
-            transition: 0.3s;
-            background: none;
-            border: none;
-            outline: none;
+            position: absolute; top: -50px; right: 0;
+            color: #fff; font-size: 1.8rem; cursor: pointer;
+            transition: 0.3s; background: none; border: none; outline: none;
         }
 
-        .modal-close:hover {
-            color: #45f3ff;
-        }
+        .modal-close:hover { color: #45f3ff; }
 
         /* Pricing Section */
-        .pricing {
-            padding: 100px 8%;
-            background-color: #0b0c10;
-        }
+        .pricing { padding: 100px 8%; background-color: #0b0c10; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .pricing-card { background-color: #11141a; border: 1px solid #1f2833; border-radius: 15px; padding: 40px 30px; text-align: center; position: relative; transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; }
+        .pricing-card:hover { transform: translateY(-5px); border-color: #45f3ff; box-shadow: 0 10px 25px rgba(69, 243, 255, 0.08); }
+        .pricing-card.popular { border-color: #45f3ff; box-shadow: 0 0 25px rgba(69, 243, 255, 0.15); }
+        .popular-tag { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: linear-gradient(45deg, #45f3ff, #00a8ff); color: #0b0c10; padding: 5px 20px; border-radius: 20px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+        .pricing-card h3 { font-size: 1.5rem; margin-bottom: 10px; color: #fff; }
+        .old-price { font-size: 1.1rem; color: #666; text-decoration: line-through; margin-bottom: -5px; display: block; }
+        .pricing-card .price { font-size: 2.2rem; font-weight: 800; color: #45f3ff; margin: 10px 0 15px 0; }
+        .pricing-card .price span { font-size: 0.9rem; color: #c5c6c7; font-weight: 400; }
+        .pricing-features { list-style: none; padding: 0; margin: 25px 0; text-align: left; }
+        .pricing-features li { font-size: 0.95rem; color: #c5c6c7; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+        .pricing-features li i { color: #45f3ff; font-size: 1rem; }
+        .pricing-btn { background-color: transparent; border: 2px solid #1f2833; color: #fff; padding: 12px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; display: inline-block; }
+        .pricing-card.popular .pricing-btn { background: linear-gradient(45deg, #45f3ff, #00a8ff); color: #0b0c10; border: none; }
+        .pricing-btn:hover { border-color: #45f3ff; background-color: rgba(69, 243, 255, 0.1); color: #45f3ff; }
+        .pricing-card.popular .pricing-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(69, 243, 255, 0.3); color: #0b0c10; }
 
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
+        /* FAQ Section */
+        .faq-section { padding: 100px 8%; background-color: #11141a; border-top: 1px solid #1f2833; }
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item { background-color: #0b0c10; border: 1px solid #1f2833; border-radius: 10px; margin-bottom: 15px; overflow: hidden; transition: 0.3s; }
+        .faq-question { padding: 22px 30px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: 600; font-size: 1.1rem; color: #fff; transition: 0.3s; }
+        .faq-question:hover { color: #45f3ff; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1); padding: 0 30px; color: #c5c6c7; font-size: 0.95rem; line-height: 1.7; }
+        .faq-item.active { border-color: #45f3ff; box-shadow: 0 5px 15px rgba(69, 243, 255, 0.05); }
+        .faq-item.active .faq-answer { padding-bottom: 25px; }
+        .faq-toggle-icon { transition: transform 0.3s ease; }
+        .faq-item.active .faq-toggle-icon { transform: rotate(45deg); color: #45f3ff; }
 
-        .pricing-card {
-            background-color: #11141a;
-            border: 1px solid #1f2833;
-            border-radius: 15px;
-            padding: 40px 30px;
-            text-align: center;
-            position: relative;
-            transition: 0.3s;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+        /* Contact Section */
+        .contact { padding: 120px 8%; text-align: center; background: linear-gradient(rgba(11, 12, 16, 0.9), rgba(11, 12, 16, 0.9)), url('https://drive.google.com/uc?export=view&id=1Mn0reIRH9FMfaWIK2XijtaUITMacZJMd'); background-size: cover; background-position: center; }
+        .contact p { color: #c5c6c7; margin-bottom: 40px; font-size: 1.1rem; }
+        
+        footer { text-align: center; padding: 30px; border-top: 1px solid #1f2833; color: #666; font-size: 0.9rem; }
 
-        .pricing-card:hover {
-            transform: translateY(-5px);
-            border-color: #45f3ff;
-            box-shadow: 0 10px 25px rgba(69, 243, 255, 0.08);
-        }
-
-        .pricing-card.popular {
-            border-color: #45f3ff;
-            box-shadow: 0 0 25px rgba(69, 243, 255, 0.15);
-        }
-
-        .popular-tag {
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(45deg, #45f3ff, #00a8ff);
-            color: #0b0c10;
-            padding: 5px 20px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .pricing-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            color: #fff;
-        }
-
-        .pricing-card .price {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: #45f3ff;
-            margin: 15px 0;
-        }
-
-        .pricing-card .price span {
-            font-size: 0.9rem;
-            color: #c5c6c7;
-            font-weight: 400;
-        }
-
-        .pricing-features {
-            list-style: none;
-            padding: 0;
-            margin: 25px 0;
-            text-align: left;
-        }
-
-        .pricing-features li {
-            font-size: 0.95rem;
-            color: #c5c6c7;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .pricing-features li i {
-            color: #45f3ff;
-            font-size: 1rem;
-        }
-
-        .pricing-btn {
-            background-color: transparent;
-            border: 2px solid #1f2833;
-            color: #fff;
-            padding: 12px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-            display: inline-block;
-        }
-
-        .pricing-card.popular .pricing-btn {
-            background: linear-gradient(45deg, #45f3ff, #00a8ff);
-            color: #0b0c10;
-            border: none;
-        }
-
-        .pricing-btn:hover {
-            border-color: #45f3ff;
-            background-color: rgba(69, 243, 255, 0.1);
-            color: #45f3ff;
-        }
-
-        .pricing-card.popular .pricing-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(69, 243, 255, 0.3);
-            color: #0b0c10;
-        }
-
-        /* FAQ SECTION INTERACTIVE ACCORDION */
-        .faq-section {
-            padding: 100px 8%;
-            background-color: #11141a;
-            border-top: 1px solid #1f2833;
-        }
-
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background-color: #0b0c10;
-            border: 1px solid #1f2833;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            overflow: hidden;
-            transition: 0.3s;
-        }
-
-        .faq-question {
-            padding: 22px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 1.1rem;
-            color: #fff;
-            transition: 0.3s;
-        }
-
-        .faq-question:hover {
-            color: #45f3ff;
-        }
-
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            padding: 0 30px;
-            color: #c5c6c7;
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        .faq-item.active {
-            border-color: #45f3ff;
-            box-shadow: 0 5px 15px rgba(69, 243, 255, 0.05);
-        }
-
-        .faq-item.active .faq-answer {
-            padding-bottom: 25px;
-        }
-
-        .faq-toggle-icon {
-            transition: transform 0.3s ease;
-        }
-
-        .faq-item.active .faq-toggle-icon {
-            transform: rotate(45deg);
-            color: #45f3ff;
-        }
-
-        /* Contact Section dengan Background Gambar Kustom */
-        .contact {
-            padding: 120px 8%;
-            text-align: center;
-            background: linear-gradient(rgba(11, 12, 16, 0.9), rgba(11, 12, 16, 0.9)), 
-                        url('https://drive.google.com/uc?export=view&id=1Mn0reIRH9FMfaWIK2XijtaUITMacZJMd');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .contact p {
-            color: #c5c6c7;
-            margin-bottom: 40px;
-            font-size: 1.1rem;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 30px;
-            border-top: 1px solid #1f2833;
-            color: #666;
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
         @media (max-width: 992px) {
-            .hero-container {
-                flex-direction: column;
-                text-align: center;
-                gap: 50px;
-                padding-top: 40px;
-            }
-            .hero-content {
-                text-align: center;
-            }
-            .hero h1 {
-                font-size: 3rem;
-            }
-            .hero p {
-                margin: 0 auto 30px;
-            }
-            .hero-stats {
-                justify-content: center;
-            }
-            .floating-badge {
-                display: none; /* Sembunyikan floating badge di HP agar rapi */
-            }
+            .promo-banner { flex-direction: column; gap: 10px; text-align: center; }
+            .hero-container { flex-direction: column; text-align: center; gap: 50px; padding-top: 40px; }
+            .hero-content { text-align: center; }
+            .hero h1 { font-size: 3rem; }
+            .hero p { margin: 0 auto 30px; }
+            .hero-stats { justify-content: center; }
+            .floating-badge { display: none; }
         }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .hero h1 { font-size: 2.6rem; }
-            .hero {
-                padding-top: 100px;
-            }
+            .hero { padding-top: 40px; }
         }
     </style>
 </head>
@@ -974,10 +550,20 @@
         </ul>
     </nav>
 
+    <div class="promo-banner">
+        <div class="promo-text">
+            <span class="promo-badge">PROMO BULAN INI</span>
+            <span class="promo-title">Dapatkan Diskon S/D 25% untuk Project Pertama Anda! Kuota Terbatas. <span><a href="#pricing" style="color: #45f3ff; font-weight: bold; text-decoration: none;">Lihat Paket Harga</a></span></span>
+        </div>
+        <div class="promo-countdown">
+            <i class="fa-solid fa-clock"></i>
+            <span>Sisa Kuota: 3 Slot Klien Lagi</span>
+        </div>
+    </div>
+
     <section class="hero" id="home">
         <div class="hero-glow-1"></div>
         <div class="hero-glow-2"></div>
-
         <div id="particle-container"></div>
 
         <div class="hero-container">
@@ -1021,7 +607,6 @@
                     <div class="mockup-screen">
                         <video autoplay loop muted playsinline>
                             <source src="https://assets.mixkit.co/videos/preview/mixkit-video-editing-software-interface-screen-40114-large.mp4" type="video/mp4">
-                            Browser Anda tidak mendukung pemutaran video langsung.
                         </video>
                     </div>
 
@@ -1074,12 +659,10 @@
         <div class="slider-wrapper" id="beforeAfterSlider">
             <div class="image-side before-image"></div>
             <div class="image-side after-image" id="afterImage"></div>
-            
             <div class="slider-handle-line" id="handleLine"></div>
             <div class="slider-button" id="handleButton">
                 <i class="fa-solid fa-arrows-left-right"></i>
             </div>
-            
             <span class="slider-label label-before">SEBELUM (RAW)</span>
             <span class="slider-label label-after">SESUDAH (GRADED)</span>
         </div>
@@ -1096,15 +679,16 @@
         </div>
 
         <div class="portfolio-grid">
-            <div class="portfolio-item filter-item vlog" onclick="openVideo('https://assets.mixkit.co/videos/preview/mixkit-cinematic-shot-of-a-man-with-a-camera-43187-large.mp4', 'Cinematic Vlog Editing')">
-                <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&auto=format&fit=crop&q=60" alt="Video Project">
+            <div class="portfolio-item filter-item gaming" onclick="openYoutubeVideo('1elHdsoaISw')">
+                <img src="https://img.youtube.com/vi/1elHdsoaISw/maxresdefault.jpg" alt="Tutorial Jedag Jeduk CapCut ML">
                 <div class="portfolio-overlay">
                     <i class="fa-solid fa-circle-play"></i>
-                    <h4>Cinematic Vlog Editing</h4>
+                    <h4>Tutorial Jedag Jeduk CapCut ML</h4>
                     <span style="font-size: 0.8rem; color: #45f3ff;">Klik untuk Putar</span>
                 </div>
             </div>
-            <div class="portfolio-item filter-item motion" onclick="openVideo('https://assets.mixkit.co/videos/preview/mixkit-hands-of-a-video-editor-using-a-creative-keyboard-40111-large.mp4', 'Commercial Ads Motion')">
+
+            <div class="portfolio-item filter-item motion" onclick="openYoutubeVideo('1elHdsoaISw')">
                 <img src="https://images.unsplash.com/photo-1626544827763-d516dce335e2?w=600&auto=format&fit=crop&q=60" alt="Motion Project">
                 <div class="portfolio-overlay">
                     <i class="fa-solid fa-circle-play"></i>
@@ -1112,11 +696,12 @@
                     <span style="font-size: 0.8rem; color: #45f3ff;">Klik untuk Putar</span>
                 </div>
             </div>
-            <div class="portfolio-item filter-item gaming" onclick="openVideo('https://assets.mixkit.co/videos/preview/mixkit-person-playing-a-first-person-shooter-video-game-on-pc-41484-large.mp4', 'YouTube Gaming Showcase')">
-                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&auto=format&fit=crop&q=60" alt="Gaming Project">
+
+            <div class="portfolio-item filter-item vlog" onclick="openYoutubeVideo('1elHdsoaISw')">
+                <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&auto=format&fit=crop&q=60" alt="Vlog Project">
                 <div class="portfolio-overlay">
                     <i class="fa-solid fa-circle-play"></i>
-                    <h4>YouTube Gaming Showcase</h4>
+                    <h4>Cinematic Vlog Editing</h4>
                     <span style="font-size: 0.8rem; color: #45f3ff;">Klik untuk Putar</span>
                 </div>
             </div>
@@ -1126,10 +711,7 @@
     <div class="video-modal" id="videoModal" onclick="closeVideo()">
         <div class="modal-content" onclick="event.stopPropagation()">
             <button class="modal-close" onclick="closeVideo()"><i class="fa-solid fa-xmark"></i></button>
-            <video id="modalVideoPlayer" controls>
-                <source src="" type="video/mp4">
-                Browser tidak mendukung pemutaran video langsung.
-            </video>
+            <div id="youtubeModalContainer" style="width:100%; height:100%;"></div>
         </div>
     </div>
 
@@ -1139,7 +721,8 @@
             <div class="pricing-card">
                 <div>
                     <h3>Shorts / Reels</h3>
-                    <div class="price">Rp 150rb <span>/ video</span></div>
+                    <span class="old-price">Rp 200.000</span>
+                    <div class="price">Rp 150.000 <span>/ video</span></div>
                     <ul class="pricing-features">
                         <li><i class="fa-solid fa-circle-check"></i> Durasi maksimal 1 Menit</li>
                         <li><i class="fa-solid fa-circle-check"></i> Subtitle Dinamis & Sound Effect</li>
@@ -1147,14 +730,15 @@
                         <li><i class="fa-solid fa-circle-check"></i> 2x Revisi</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/6281234567890?text=Halo%20Gilang%20VII,%20saya%20tertarik%20dengan%20Paket%20Shorts%20/%20Reels." class="pricing-btn" target="_blank">Pilih Paket</a>
+                <a href="https://wa.me/6289512961925?text=Halo%20Gilang%20VII,%20saya%20tertarik%20dengan%20Promo%20Paket%20Shorts%20/%20Reels." class="pricing-btn" target="_blank">Pilih Paket</a>
             </div>
 
             <div class="pricing-card popular">
-                <div class="popular-tag">Paling Populer</div>
+                <div class="popular-tag">PROMO TERLARIS</div>
                 <div>
                     <h3>Standard Video</h3>
-                    <div class="price">Rp 450rb <span>/ video</span></div>
+                    <span class="old-price" style="color: #aaaaaa;">Rp 600.000</span>
+                    <div class="price">Rp 450.000 <span>/ video</span></div>
                     <ul class="pricing-features">
                         <li><i class="fa-solid fa-circle-check"></i> Durasi maks. 10 Menit (YouTube/Vlog)</li>
                         <li><i class="fa-solid fa-circle-check"></i> B-Roll & Visual Assets Integration</li>
@@ -1163,13 +747,14 @@
                         <li><i class="fa-solid fa-circle-check"></i> 3x Revisi + Gratis Thumbnail</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/6281234567890?text=Halo%20Gilang%20VII,%20saya%20tertarik%20dengan%20Paket%20Standard%20Video." class="pricing-btn" target="_blank">Pilih Paket</a>
+                <a href="https://wa.me/6289512961925?text=Halo%20Gilang%20VII,%20saya%20tertarik%20dengan%20Promo%20Paket%20Standard%20Video." class="pricing-btn" target="_blank">Pilih Paket</a>
             </div>
 
             <div class="pricing-card">
                 <div>
                     <h3>Premium / Custom</h3>
-                    <div class="price">Hubungi Kami</div>
+                    <span class="old-price">Rp 1.200.000</span>
+                    <div class="price">Rp 899.000 <span>/ video</span></div>
                     <ul class="pricing-features">
                         <li><i class="fa-solid fa-circle-check"></i> Iklan Produk / Dokumenter / Motion</li>
                         <li><i class="fa-solid fa-circle-check"></i> Konsep Kreatif & Scriptwriting</li>
@@ -1177,7 +762,7 @@
                         <li><i class="fa-solid fa-circle-check"></i> Revisi Sampai Puas</li>
                     </ul>
                 </div>
-                <a href="https://wa.me/6281234567890?text=Halo%20Gilang%20VII,%20saya%20ingin%20konsultasi%20mengenai%20Paket%20Custom%20Premium." class="pricing-btn" target="_blank">Konsultasi</a>
+                <a href="https://wa.me/6289512961925?text=Halo%20Gilang%20VII,%20saya%20ingin%20konsultasi%20mengenai%20Paket%20Custom%20Premium." class="pricing-btn" target="_blank">Konsultasi</a>
             </div>
         </div>
     </section>
@@ -1220,7 +805,7 @@
     <section class="contact" id="contact">
         <h2 class="section-title">Tertarik Bekerjasama?</h2>
         <p>Bawa kualitas konten Anda ke level selanjutnya bersama Gilang VII.</p>
-        <a href="https://wa.me/6281234567890?text=Halo%20Gilang%20VII,%20saya%20tertarik%20dengan%20jasa%20editingnya." class="cta-btn" target="_blank">Hubungi Via WhatsApp</a>
+        <a href="https://wa.me/6289512961925?text=Halo%20Gilang%20VII,%20saya%20tertarik%20dengan%20jasa%20editingnya." class="cta-btn" target="_blank">Hubungi Via WhatsApp</a>
     </section>
 
     <footer>
@@ -1228,25 +813,23 @@
     </footer>
 
     <script>
-        // Membuka modal pop-up video
-        function openVideo(videoUrl, title) {
+        // FUNGSI UNTUK MEMBUKA VIDEO YOUTUBE DI DALAM MODAL POP-UP
+        function openYoutubeVideo(youtubeId) {
             const modal = document.getElementById('videoModal');
-            const videoPlayer = document.getElementById('modalVideoPlayer');
+            const container = document.getElementById('youtubeModalContainer');
             
-            // Pasang URL video & mulai putar
-            videoPlayer.src = videoUrl;
+            // Generate Iframe otomatis dengan fitur autoplay aktif
+            container.innerHTML = `<iframe src="https://www.youtube.com/embed/${youtubeId}?autoplay=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+            
             modal.style.display = 'flex';
-            videoPlayer.play();
         }
 
-        // Menutup modal pop-up video
+        // MENUTUP MODAL POP-UP & MENGHENTIKAN AUDIO VIDEO YOUTUBE
         function closeVideo() {
             const modal = document.getElementById('videoModal');
-            const videoPlayer = document.getElementById('modalVideoPlayer');
+            const container = document.getElementById('youtubeModalContainer');
             
-            // Hentikan video & sembunyikan modal
-            videoPlayer.pause();
-            videoPlayer.src = "";
+            container.innerHTML = ""; // Kosongkan iframe agar video YouTube berhenti berputar di background
             modal.style.display = 'none';
         }
 
@@ -1257,15 +840,12 @@
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.classList.add('particle');
-                
-                // Randomize positions, scale, and animation duration
                 particle.style.left = `${Math.random() * 100}%`;
                 const size = Math.random() * 6 + 2;
                 particle.style.width = `${size}px`;
                 particle.style.height = `${size}px`;
                 particle.style.animationDuration = `${Math.random() * 10 + 10}s`;
                 particle.style.animationDelay = `${Math.random() * 8}s`;
-                
                 container.appendChild(particle);
             }
         }
@@ -1274,14 +854,10 @@
         // FAQ Interactive Accordion Function
         function toggleFaq(element) {
             const isActive = element.classList.contains('active');
-            
-            // Close all other FAQ items first
             document.querySelectorAll('.faq-item').forEach(item => {
                 item.classList.remove('active');
                 item.querySelector('.faq-answer').style.maxHeight = null;
             });
-            
-            // If the clicked element wasn't active, open it
             if (!isActive) {
                 element.classList.add('active');
                 const answer = element.querySelector('.faq-answer');
@@ -1291,11 +867,8 @@
 
         // Portfolio Category Filter Function
         function filterPortfolio(category, button) {
-            // Update active state of filter buttons
             document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
-
-            // Filter portfolio items
             document.querySelectorAll('.filter-item').forEach(item => {
                 if (category === 'all' || item.classList.contains(category)) {
                     item.classList.remove('hidden');
@@ -1305,7 +878,7 @@
             });
         }
 
-        // INTERACTIVE BEFORE / AFTER SLIDER CODE
+        // BEFORE / AFTER SLIDER CODE
         const slider = document.getElementById('beforeAfterSlider');
         const afterImg = document.getElementById('afterImage');
         const handleLine = document.getElementById('handleLine');
@@ -1314,14 +887,30 @@
         function moveSlider(e) {
             const rect = slider.getBoundingClientRect();
             let x = 0;
-            
-            // Handle both touch events and mouse events
             if (e.changedTouches) {
                 x = e.changedTouches[0].clientX - rect.left;
             } else {
                 x = e.clientX - rect.left;
             }
-            
-            // Lock positioning inside borders
             if (x < 0) x = 0;
             if (x > rect.width) x = rect.width;
+            const positionPercent = (x / rect.width) * 100;
+            afterImg.style.width = `${positionPercent}%`;
+            handleLine.style.left = `${positionPercent}%`;
+            handleBtn.style.left = `${positionPercent}%`;
+        }
+
+        let isDragging = false;
+        function startDragging() { isDragging = true; }
+        function stopDragging() { isDragging = false; }
+
+        slider.addEventListener('mousedown', (e) => { startDragging(); moveSlider(e); });
+        window.addEventListener('mouseup', stopDragging);
+        slider.addEventListener('mousemove', (e) => { if (!isDragging) return; moveSlider(e); });
+
+        slider.addEventListener('touchstart', (e) => { startDragging(); moveSlider(e); });
+        window.addEventListener('touchend', stopDragging);
+        slider.addEventListener('touchmove', (e) => { if (!isDragging) return; moveSlider(e); });
+    </script>
+</body>
+</html>
